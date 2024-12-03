@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shooter 2D: Desafío de los Zombis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Pantalla de Inicio de Sesión -->
+    <section id="loginScreen" style="display: block;">
+        <h2>Iniciar Sesión</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <p>¿No tienes cuenta? <button id="showRegister">Regístrate</button></p>
+        <p>¿Solo quieres probar? <button id="playAsGuest">Entrar como visitante</button></p>
+    </section>
+
+    <!-- Pantalla de Registro -->
+    <section id="registerScreen" style="display: none;">
+        <h2>Registro</h2>
+        <form id="registerForm">
+            <input type="text" id="registerUsername" placeholder="Usuario" required>
+            <input type="password" id="registerPassword" placeholder="Contraseña" required>
+            <button type="submit">Registrar</button>
+        </form>
+        <p>¿Ya tienes cuenta? <button id="showLogin">Inicia sesión</button></p>
+    </section>
+
+    <!-- Menú principal -->
+    <header id="menu" style="display: none;">
+        <h1>Shooter 2D: Desafío de los Zombis</h1>
+        <button id="startGame">Jugar</button>
+        <button id="showScores">Ver Puntajes</button>
+        <button id="logout">Cerrar Sesión</button>
+    </header>
+
+    <!-- Contenedor del Juego -->
+    <main id="gameContainer" style="display: none;">
+        <h1>Juego de Shooter 2D: Zombies</h1>
+        <div class="score">Puntuación: <span id="score">0</span></div>
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Pantalla de Game Over -->
+        <section id="gameOverScreen" style="display: none;">
+            <h2>¡Juego Terminado!</h2>
+            <p>Puntuación final: <span id="finalScore">0</span></p>
+            <button id="restart">Reiniciar</button>
+            <button id="backToMenu">Volver al Menú</button>
+        </section>
+    </main>
+
+    <!-- Tabla de Puntajes -->
+    <section id="scoreBoard" style="display: none;">
+        <h2>Puntajes</h2>
+        <table id="scoreTable">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Puntaje</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button id="backToGameMenu">Volver</button>
+    </section>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
